@@ -158,7 +158,7 @@ VRDisplay.prototype.cancelAnimationFrame = function(id) {
 
 VRDisplay.prototype.wrapForFullscreen = function(element) {
   // Don't wrap in iOS.
-  if (Util.isIOS()) {
+  if (Util.isIOS() && !Util.supportsIOSFullscreen(element)) {
     return element;
   }
   if (!this.fullscreenWrapper_) {
